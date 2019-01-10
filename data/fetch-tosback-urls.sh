@@ -18,4 +18,4 @@ trap "rm -rf master" INT TERM EXIT
 find master/tosback2-master/rules/ -iname "*.xml" \
   -exec xmllint {} -xpath "string(//url/@name)" \; \
   -exec echo \; \
-  > urls.txt
+  > tosback-urls.txt
