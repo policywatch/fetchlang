@@ -12,5 +12,6 @@ unzip -q -d $tmpdir/ $tmpdir/master.zip
 
 find $tmpdir/tosback2-master/rules/ -iname "*.xml" \
   -exec xmllint {} -xpath "string(//url/@name)" \; \
-  -exec echo \; \
+  -exec echo \; |
+  sed '/^\s*$/d' \
   > tosback-urls.txt
