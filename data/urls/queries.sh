@@ -4,5 +4,5 @@ set -euo pipefail
 
 cat "$@" \
   | grep '?' \
-  | cut -d '?' -f 2 \
+  | cut -d '?' -f 2- \
   | sort | uniq
