@@ -2,13 +2,12 @@
 
 set -euo pipefail
 
-tmpdir=$(mktemp -d)
+url=https://github.com/tosdr/tosback2/archive/master.zip
 
+tmpdir=$(mktemp -d)
 trap "rm -rf $tmpdir" INT TERM EXIT
 
-wget -O $tmpdir/master.zip \
-  https://github.com/tosdr/tosback2/archive/master.zip
-
+wget -O $tmpdir/master.zip "${url}"
 unzip -d $tmpdir/ $tmpdir/master.zip
 
 find $tmpdir/tosback2-master/rules/ -iname "*.xml" \
